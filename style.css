@@ -185,6 +185,13 @@ input:focus-visible {
     box-shadow: var(--shadow-card)
 }
 
+.play-store-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0
+}
+
 .btn-primary:hover {
     background: var(--accent-deep);
     transform: translateY(-1px)
@@ -803,7 +810,7 @@ section.alt {
     border: 1px solid rgba(250, 247, 238, .15)
 }
 
-.play-badge svg {
+.play-badge .play-store-icon {
     width: 22px;
     height: 22px;
     flex-shrink: 0
