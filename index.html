@@ -295,13 +295,11 @@
         <div class="waitlist-card">
           <h3>iOS is coming</h3>
           <p>Leave your email and we'll only message you when Pic2Report ships on the App Store.</p>
-          <!-- PLACEHOLDER: wire this form to a real endpoint (Formspree, Mailchimp, or a Google Form action URL). Submission is currently disabled. -->
-          <form class="waitlist-form" id="waitlist-form" action="#REPLACE_WITH_FORM_ENDPOINT" method="POST">
+          <form class="waitlist-form" action="https://formsubmit.co/a8572273d37d896eff364e221e0bb5ae" method="POST">
             <label for="waitlist-email" class="visually-hidden">Email address</label>
             <input type="email" id="waitlist-email" name="email" placeholder="you@email.com" required>
             <button type="submit" class="btn btn-primary">Notify me</button>
           </form>
-          <p class="waitlist-success" id="waitlist-success">You're on the list — thanks!</p>
           <p class="waitlist-note">We'll only email you about the iOS launch. No spam, no other lists.</p>
         </div>
       </div>
@@ -377,20 +375,6 @@
     items.forEach(function(el){ io.observe(el); });
   })();
 
-  // Waitlist form — front-end only. PLACEHOLDER: real submission requires
-  // a live endpoint in the form's action attribute (Formspree, Mailchimp, a
-  // Google Form, etc). This handler just shows a local confirmation message
-  // and does NOT send data anywhere yet.
-  (function(){
-    var form = document.getElementById('waitlist-form');
-    var success = document.getElementById('waitlist-success');
-    if(!form) return;
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      success.style.display = 'block';
-      form.reset();
-    });
-  })();
 </script>
 
 </body>
