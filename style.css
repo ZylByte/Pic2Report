@@ -231,22 +231,9 @@ header {
 .wordmark .mark {
     width: 26px;
     height: 26px;
-    background: var(--accent);
     border-radius: 5px;
-    position: relative;
+    object-fit: cover;
     flex-shrink: 0
-}
-
-.wordmark .mark::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 8px 8px 0;
-    border-color: transparent var(--paper) transparent transparent
 }
 
 .nav-links {
