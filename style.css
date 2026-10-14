@@ -316,99 +316,28 @@ header {
     letter-spacing: .02em
 }
 
-.phone-frame {
+.hero-gallery {
     position: relative;
-    width: 100%;
-    max-width: 320px;
+    width: min(100%, 480px);
+    aspect-ratio: 1;
     margin: 0 auto;
-    aspect-ratio: 9/19.5;
-    background: var(--ink);
-    border-radius: 34px;
-    padding: 12px;
-    box-shadow: var(--shadow-lift)
+    isolation: isolate
 }
 
-.phone-frame .screen {
+.hero-gallery-image {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    background: var(--paper-elevated);
-    border-radius: 22px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column
+    object-fit: contain;
+    opacity: 0;
+    transform: scale(.985);
+    transition: opacity .8s ease, transform .8s ease
 }
 
-.phone-frame .notch {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70px;
-    height: 18px;
-    background: var(--ink);
-    border-radius: 10px;
-    z-index: 3
-}
-
-.screen-placeholder {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(180deg, var(--tint-report-bg), var(--paper-elevated) 55%)
-}
-
-.screen-placeholder .icon-doc {
-    width: 84px;
-    height: 108px;
-    background: var(--paper);
-    border: 1.5px solid var(--line-strong);
-    border-radius: 6px;
-    margin-bottom: 18px;
-    position: relative
-}
-
-.screen-placeholder .icon-doc::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-style: solid;
-    border-width: 0 14px 14px 0;
-    border-color: transparent var(--paper) transparent transparent
-}
-
-.screen-placeholder .icon-doc span {
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    height: 2px;
-    background: var(--line-strong)
-}
-
-.screen-placeholder .icon-doc span:nth-child(1) {
-    top: 26px
-}
-
-.screen-placeholder .icon-doc span:nth-child(2) {
-    top: 40px
-}
-
-.screen-placeholder .icon-doc span:nth-child(3) {
-    top: 54px;
-    width: 60%
-}
-
-.screen-placeholder small {
-    font-family: var(--mono);
-    font-size: .68rem;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    color: var(--ink-faint)
+.hero-gallery-image.is-active {
+    opacity: 1;
+    transform: scale(1)
 }
 
 section {
@@ -1080,6 +1009,10 @@ footer {
     .reveal {
         opacity: 1;
         transform: none;
+        transition: none
+    }
+
+    .hero-gallery-image {
         transition: none
     }
 

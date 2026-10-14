@@ -55,14 +55,9 @@
       </div>
 
       <div class="hero-visual reveal">
-        <div class="phone-frame">
-          <div class="notch" aria-hidden="true"></div>
-          <div class="screen">
-            <div class="screen-placeholder">
-              <div class="icon-doc" aria-hidden="true"><span></span><span></span><span></span></div>
-              <small>Hero screenshot placeholder</small>
-            </div>
-          </div>
+        <div class="hero-gallery" role="group" aria-label="Pic2Report app screenshots">
+          <img class="hero-gallery-image is-active" src="assets/images/scanner%20demo.png" alt="Pic2Report document scanner showing photo enhancement controls" aria-hidden="false">
+          <img class="hero-gallery-image" src="assets/images/builder%20demo.png" alt="Pic2Report report builder showing document editing and preview" aria-hidden="true">
         </div>
       </div>
     </div>
@@ -371,6 +366,21 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     items.forEach(function(el){ io.observe(el); });
+  })();
+
+  (function(){
+    var images = document.querySelectorAll('.hero-gallery-image');
+    var activeIndex = 0;
+
+    if(images.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    window.setInterval(function(){
+      images[activeIndex].classList.remove('is-active');
+      images[activeIndex].setAttribute('aria-hidden', 'true');
+      activeIndex = (activeIndex + 1) % images.length;
+      images[activeIndex].classList.add('is-active');
+      images[activeIndex].setAttribute('aria-hidden', 'false');
+    }, 5000);
   })();
 
 </script>
