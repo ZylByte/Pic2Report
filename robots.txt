@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zylbyte.github.io/Pic2Report/sitemap.xml
